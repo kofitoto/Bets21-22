@@ -1,0 +1,33 @@
+
+WbusinessLogic.BLFacadeImplementation#getEventsMonth(Ljava/util/Date;)Ljava/util/Vector;±
+¦C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar  r(."startingBlock*¥
+startingBlock±
+¦C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar. r(9ò
+ï
+±
+¦C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar r(
+%0"
+__annotate*
+	WebMethod*
+
+datejava.util.Dateå
+â
+±
+¦C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javar4 r(8
+datejava.util.Date"__annotation*
+
+%0*
+1*î
+1±
+¦C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javas s(à
+Ý
+±
+¦C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javat t(5
+datesjava.util.Vector"__id*
+"""Ñ
+±
+¦C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/businessLogic/BLFacadeImplementation.javav v(
+
+datesjava.util.Vector:
+datejava.util.DateB(&
+$businessLogic.BLFacadeImplementation

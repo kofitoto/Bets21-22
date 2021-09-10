@@ -1,0 +1,93 @@
+
+,gui.MainGUI#getBoton2()Ljavax/swing/JButton;ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javal l("3*˙
+2ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javan n(%ŒÀ
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javan n(#
+%1javax.swing.JButton"javax.swing.JButton‡
+›
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javan n(%
+%2"javax.swing.JButton#<init>()V*
+
+%1javax.swing.JButtonË
+Â
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javan n(%%
+gui.MainGUI"
+jButtonCreateQuery"__id*
+
+%1javax.swing.JButtonË
+Â
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javao o(
+%3javax.swing.JButton"__id*'*%
+gui.MainGUI"
+jButtonCreateQueryΩ
+∫
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javao o(C
+%4java.util.ResourceBundle"Pjava.util.ResourceBundle#getBundle(Ljava/lang/String;)Ljava/util/ResourceBundle;*"
+java.util.ResourceBundle*
+	EtiquetasÃ…
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javao o(V
+%5java.lang.String"Hjava.util.ResourceBundle#getString(Ljava/lang/String;)Ljava/lang/String;* 
+
+%4java.util.ResourceBundle*	
+logIn2getString(Ljava/lang/String;)∑¥
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javao o(W
+
+%6void"7javax.swing.AbstractButton#setText(Ljava/lang/String;)V*
+
+%3javax.swing.JButton*
+
+%5java.lang.String2setText(Ljava/lang/String;)Ë
+Â
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javap p(
+%7javax.swing.JButton"__id*'*%
+gui.MainGUI"
+jButtonCreateQueryÃ…
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javap, p(I
+%8Lgui/MainGUI$2817;"Lgui/MainGUI$2817;‹
+Ÿ
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javap( t(
+%9"java.lang.Object#<init>()V*
+
+%8Lgui/MainGUI$2817;ËÂ
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javap t(
+%10void"Njavax.swing.AbstractButton#addActionListener(Ljava/awt/event/ActionListener;)V*
+
+%7javax.swing.JButton*
+
+%8Lgui/MainGUI$2817;22addActionListener(Ljava/awt/event/ActionListener;)*
+1*ë
+3ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javam m(Ë
+Â
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javam m(
+%0javax.swing.JButton"__id*'*%
+gui.MainGUI"
+jButtonCreateQuery*
+2
+1*∆
+1ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javav	 v(È
+Ê
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javav	 v(
+%11javax.swing.JButton"__id*'*%
+gui.MainGUI"
+jButtonCreateQuery"π
+ò
+çC:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/gui/MainGUI.javav v(
+
+%11javax.swing.JButtonB
+gui.MainGUI
