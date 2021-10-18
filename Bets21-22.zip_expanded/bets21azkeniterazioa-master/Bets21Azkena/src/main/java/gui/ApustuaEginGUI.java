@@ -74,8 +74,8 @@ public class ApustuaEginGUI extends JFrame {
 	private JLabel pronosticAdded;
 	private JButton quitButton;
 	private final JLabel euro = new JLabel("\u20AC");
-	private final JLabel TotalMinBet = new JLabel("");
-	private final JLabel TotalFee = new JLabel("");
+	private final JLabel totalMinBet = new JLabel("");
+	private final JLabel totalFee = new JLabel("");
 	private double minBetTotala;
 	private double kuotaTotala;
 	
@@ -208,8 +208,8 @@ public class ApustuaEginGUI extends JFrame {
 							}
 							pronostikoak.removeAll(pronostikoak);
 							jButtonCreate.setEnabled(false);
-							TotalMinBet.setText("");
-							TotalFee.setText("");
+							totalMinBet.setText("");
+							totalFee.setText("");
 						}
 					}
 				}catch(Exception e) {
@@ -306,15 +306,15 @@ public class ApustuaEginGUI extends JFrame {
 				double kuotaZaharra = pronostikoak.get((int)pronosI).getKuota();
 				pronostikoak.remove((int)pronosI);
 				if(pronostikoak.isEmpty()) {
-					TotalMinBet.setText("");
-					TotalFee.setText("");
+					totalMinBet.setText("");
+					totalFee.setText("");
 					scrollPaneApustua.setVisible(false);
 					jButtonCreate.setEnabled(false);
 				}else {
 					minBetTotala=getMinBet();
 					kuotaTotala=kuotaTotala/kuotaZaharra;
-					TotalMinBet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MinBet")+" "+minBetTotala);
-					TotalFee.setText(ResourceBundle.getBundle(ETIQUETAS).getString("TotalFee")+" "+kuotaTotala);
+					totalMinBet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MinBet")+" "+minBetTotala);
+					totalFee.setText(ResourceBundle.getBundle(ETIQUETAS).getString("totalFee")+" "+kuotaTotala);
 				}
 				quitButton.setEnabled(false);
 			}
@@ -351,8 +351,8 @@ public class ApustuaEginGUI extends JFrame {
 							}
 							kuotaTotala=kuotaTotala*selectedPronostic.getKuota();
 						}
-						TotalMinBet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MinBet")+" "+minBetTotala);
-						TotalFee.setText(ResourceBundle.getBundle(ETIQUETAS).getString("TotalFee")+" "+kuotaTotala);
+						totalMinBet.setText(ResourceBundle.getBundle(ETIQUETAS).getString("MinBet")+" "+minBetTotala);
+						totalFee.setText(ResourceBundle.getBundle(ETIQUETAS).getString("totalFee")+" "+kuotaTotala);
 						pronostikoak.add(selectedPronostic);
 					}else {
 						pronosticAdded.setText(ResourceBundle.getBundle(ETIQUETAS).getString("Finished"));
@@ -373,12 +373,12 @@ public class ApustuaEginGUI extends JFrame {
 		euro.setBounds(144, 485, 46, 14);
 		
 		getContentPane().add(euro);
-		TotalMinBet.setBounds(178, 466, 186, 14);
+		totalMinBet.setBounds(178, 466, 186, 14);
 		
-		getContentPane().add(TotalMinBet);
-		TotalFee.setBounds(374, 467, 206, 14);
+		getContentPane().add(totalMinBet);
+		totalFee.setBounds(374, 467, 206, 14);
 		
-		getContentPane().add(TotalFee);
+		getContentPane().add(totalFee);
 
 		
 		// Code for JCalendar
