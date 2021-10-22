@@ -14,8 +14,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
-import java.util.Vector;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -49,7 +47,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelError = new JLabel();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
+	private ArrayList<Date> datesWithEventsCurrentMonth = new ArrayList<>();
 	
 	Event selectedEvent;
 	private final JLabel jLabelErrorDate = new JLabel();
@@ -110,7 +108,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 		
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
-		datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+		datesWithEventsCurrentMonth=(ArrayList<Date>) facade.getEventsMonth(jCalendar.getDate());
 		paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
@@ -196,7 +194,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 						
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+						datesWithEventsCurrentMonth=(ArrayList<Date>) facade.getEventsMonth(jCalendar.getDate());
 					}
 
 
@@ -240,7 +238,7 @@ public class GertaeraEzabatuGUI extends JFrame {
 	}
 
 	
-public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWithEventsCurrentMonth) {
+public static void paintDaysWithEvents(JCalendar jCalendar,ArrayList<Date> datesWithEventsCurrentMonth2) {
 		Calendar calendar = jCalendar.getCalendar();
 		
 		int month = calendar.get(Calendar.MONTH);
@@ -255,7 +253,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 //		else
 			offset += 5;
 		
-	 	for (Date d:datesWithEventsCurrentMonth){
+	 	for (Date d:datesWithEventsCurrentMonth2){
 	 		calendar.setTime(d);
 	 		System.out.println(d);
 			Component o = (Component) jCalendar.getDayChooser().getDayPanel()
