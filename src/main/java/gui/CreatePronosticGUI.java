@@ -271,7 +271,7 @@ public class CreatePronosticGUI extends JFrame {
 					try {
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						Vector<domain.Event> events = facade.getEvents(firstDay);
+						ArrayList<domain.Event> events = facade.getEvents(firstDay);
 
 						if (events.isEmpty())
 							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
@@ -315,7 +315,7 @@ public class CreatePronosticGUI extends JFrame {
 		for (Date d : datesWithEventsCurrentMonth) {
 			calendar.setTime(d);
 			System.out.println(d);
-			Component o = (Component) jCalendar.getDayChooser().getDayPanel()
+			Component o = jCalendar.getDayChooser().getDayPanel()
 					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);
 			o.setBackground(Color.CYAN);
 		}

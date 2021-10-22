@@ -160,7 +160,7 @@ public class CreateQuestionGUI extends JFrame {
 					try {
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						Vector<domain.Event> events = facade.getEvents(firstDay);
+						ArrayList<Event> events = facade.getEvents(firstDay);
 
 						if (events.isEmpty())
 							jLabelListOfEvents.setText(ResourceBundle.getBundle("Etiquetas").getString("NoEvents")
@@ -175,9 +175,9 @@ public class CreateQuestionGUI extends JFrame {
 							modelEvents.addElement(ev);
 						jComboBoxEvents.repaint();
 
-						if (events.size() == 0)
+						if (events.isEmpty()) {
 							jButtonCreate.setEnabled(false);
-						else
+						} else
 							jButtonCreate.setEnabled(true);
 
 					} catch (Exception e1) {
