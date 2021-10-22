@@ -33,7 +33,7 @@ public class FindQuestionsGUI extends JFrame {
 	private JScrollPane scrollPaneEvents = new JScrollPane();
 	private JScrollPane scrollPaneQueries = new JScrollPane();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
+	private ArrayList<Date> datesWithEventsCurrentMonth = new ArrayList<>();
 
 	private JTable tableEvents= new JTable();
 	private JTable tableQueries = new JTable();
@@ -97,7 +97,7 @@ public class FindQuestionsGUI extends JFrame {
 		jCalendar1.setBounds(new Rectangle(40, 50, 225, 150));
 
 		BLFacade facade = MainGUI.getBusinessLogic();
-		datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar1.getDate());
+		datesWithEventsCurrentMonth=(ArrayList<Date>) facade.getEventsMonth(jCalendar1.getDate());
 		CreateQuestionGUI.paintDaysWithEvents(jCalendar1,datesWithEventsCurrentMonth);
 
 		// Code for JCalendar
@@ -135,7 +135,7 @@ public class FindQuestionsGUI extends JFrame {
 
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar1.getDate());
+						datesWithEventsCurrentMonth=(ArrayList<Date>) facade.getEventsMonth(jCalendar1.getDate());
 					}
 
 

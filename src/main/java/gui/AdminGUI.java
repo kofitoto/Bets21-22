@@ -2,9 +2,8 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Vector;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,7 +11,6 @@ import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
 import domain.Admin;
-
 import javax.swing.JLabel;
 import java.awt.Color;
 
@@ -109,7 +107,7 @@ public class AdminGUI extends JFrame {
 	
 	public void irekiCreateQuestion() {
 		this.setVisible(false);
-		JFrame a = new CreateQuestionGUI(new Vector<domain.Event>(), this);
+		JFrame a = new CreateQuestionGUI(new ArrayList<>(), this);
 		a.setVisible(true);
 	}
 	
