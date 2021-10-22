@@ -1,7 +1,0 @@
-organization=kofitoto
-projectKey=Bets21-22_Darko_Kofi
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.23159
-dashboardUrl=https://sonarcloud.io/dashboard?id=Bets21-22_Darko_Kofi
-ceTaskId=AXvQFIwEc5pxCGGJyxoL
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXvQFIwEc5pxCGGJyxoL

@@ -1,18 +1,0 @@
-
-Fdomain.IntegerAdapter#unmarshal(Ljava/lang/String;)Ljava/lang/Integer;¢
-—C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/domain/IntegerAdapter.java ("1*ô
-1¢
-—C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/domain/IntegerAdapter.java (”
-‘
-¢
-—C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/domain/IntegerAdapter.java ("	
-%0int"/java.lang.Integer#parseInt(Ljava/lang/String;)I*"
-java.lang.Integer*
-
-sjava.lang.String"²
-¢
-—C:/Users/kofid/OneDrive/Desktop/Curso21-22/IS2/Bets21-22.zip_expanded/bets21azkeniterazioa-master/Bets21Azkena/src/main/java/domain/IntegerAdapter.java (#
-	
-%0int:
-sjava.lang.StringB
-domain.IntegerAdapter
