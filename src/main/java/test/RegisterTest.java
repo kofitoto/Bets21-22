@@ -3,9 +3,6 @@ package test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
-import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import businessLogic.BLFacade;
@@ -27,14 +24,13 @@ public class RegisterTest {
 	private DataAccess dataAccessMock = Mockito.mock (DataAccess.class);
 	private BLFacade sut = new BLFacadeImplementation(dataAccessMock);
 	
-	@BeforeEach
+
 	public void setUp() {
 		MockitoAnnotations.initMocks(dataAccessMock);
 	}
 
 	
-	@Test
-	@DisplayName("Test 1: Prueba ")
+
 	public void test1() {
 
 			try {
@@ -47,8 +43,7 @@ public class RegisterTest {
 			}	
 	}
 	
-	@Test
-	@DisplayName("Test 2: Prueba ")
+
 	public void test2() {
 		try {
 			Mockito.doReturn(new Admin("Jon", PEREZ, PEREZ, JON99,PASAHITZA, TELEFONOA,
@@ -63,8 +58,6 @@ public class RegisterTest {
 		}	
 }
 	
-	@Test
-	@DisplayName("Test 3: Prueba ")
 	public void test3() {
 		try {
 			Mockito.doReturn(new Langilea("Jon", PEREZ, PEREZ, JON99,PASAHITZA, TELEFONOA,
@@ -78,9 +71,7 @@ public class RegisterTest {
 			e.printStackTrace();
 		}	
 	}
-	
-	@Test
-	@DisplayName("Test 4: Prueba ")
+
 	public void test4() {
 		try {
 			Mockito.doReturn(new Bezeroa("Jon", PEREZ, PEREZ, JON99,PASAHITZA, TELEFONOA,
@@ -94,8 +85,7 @@ public class RegisterTest {
 			e.printStackTrace();
 		}	
 	}
-	@Test
-	@DisplayName("Test 5: Prueba ")
+
 	public void test5() {
 		try {
 			Mockito.doReturn(false).when(dataAccessMock).register("1","1","1","1","1","1","1",JAIOTZE_DATA,"1");
