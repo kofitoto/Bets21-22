@@ -1,5 +1,6 @@
 package dataAccess;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 //hello
 import java.util.Calendar;
@@ -45,6 +46,8 @@ import exceptions.UserAlreadyExist;
  * It implements the data access to the objectDb database
  */
 public class DataAccess {
+	private static final String TELEFONO = "123456789";
+	private static final String AAAAAAAA = "aaaaaaaa";
 	protected static EntityManager db;
 	protected static EntityManagerFactory emf;
 
@@ -136,22 +139,22 @@ public class DataAccess {
 				q6 = ev17.addQuestion("Golak sartuko dira lehenengo zatian?", 2);
 			}
 
-			Admin a1 = new Admin("Ramon", "Rodriguez", "Soto", "Admin", "aaaaaaaa", "666666666","ramonAdmindb.@gmail.com", UtilDate.newDate(2001,2,12));
+			Admin a1 = new Admin("Ramon", "Rodriguez", "Soto", "Admin", AAAAAAAA, "666666666","ramonAdmindb.@gmail.com", LocalDate.of(2001,2,12));
 			
-			Langilea l1 = new Langilea("Oier", "Elola", "Urkizu", "Elola", "aaaaaaaa", "987654321", "oierurkizu@gmail.com", UtilDate.newDate(2001,7,23));
-			Langilea l2 = new Langilea("Unax", "Lazkanotegi", "Bengoetxea", "UnaxLazka", "aaaaaaaa", "384625395","UnaxLazka@gmail.com", UtilDate.newDate(2001,7,23));
+			Langilea l1 = new Langilea("Oier", "Elola", "Urkizu", "Elola", AAAAAAAA, "987654321", "oierurkizu@gmail.com", LocalDate.of(2001,7,23));
+			Langilea l2 = new Langilea("Unax", "Lazkanotegi", "Bengoetxea", "UnaxLazka", AAAAAAAA, "384625395","UnaxLazka@gmail.com", LocalDate.of(2001,7,23));
 			
-			Bezeroa b1 = new Bezeroa("Tarek", "Chamkhi", "Ermina", "Tarek12301", "aaaaaaaa", "123456789", "Tarek12301@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b2 = new Bezeroa("Josu", "Loidi", "Gorostidi", "Josulo", "aaaaaaaa", "123456789", "josulo@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b1 = new Bezeroa("Tarek", "Chamkhi", "Ermina", "Tarek12301", AAAAAAAA, TELEFONO, "Tarek12301@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b2 = new Bezeroa("Josu", "Loidi", "Gorostidi", "Josulo", AAAAAAAA, TELEFONO, "josulo@gmail.com",LocalDate.of(2001,8,9));
 			b2.setPublikoa(false);
-			Bezeroa b3 = new Bezeroa("Jose", "García", "Perez", "JoseRamon", "aaaaaaaa", "123456789", "JoseRamon@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b4 = new Bezeroa("Josu", "Perez", "Galdos", "Josueeee", "aaaaaaaa", "123456789", "Josueeee@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b5 = new Bezeroa("Saioa", "Goikoetxea", "Ugarte", "Saioo99", "b", "123456789", "Saioo99@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b6 = new Bezeroa("Mikel", "Artola", "Peraz", "Gamer75", "aaaaaaaa", "123456789", "Gamer75@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b7 = new Bezeroa("Pello", "Garcia", "Lorca", "PelloJoxepe", "aaaaaaaa", "123456789", "PelloJoxepe@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b8 = new Bezeroa("Karmele", "Loidi", "Gorostidi", "Katuu19", "aaaaaaaa", "123456789", "Katuu19@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b9 = new Bezeroa("Eneko", "Sagastume", "Ontsalo", "Ontsalo", "aaaaaaaa", "123456789", "Ontsalo@gmail.com",UtilDate.newDate(2001,8,9));
-			Bezeroa b10 = new Bezeroa("Naiara", "Agirre", "Urriza", "Na1ara", "aaaaaaaa", "123456789", "Na1ara@gmail.com",UtilDate.newDate(2001,8,9));
+			Bezeroa b3 = new Bezeroa("Jose", "García", "Perez", "JoseRamon", AAAAAAAA, TELEFONO, "JoseRamon@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b4 = new Bezeroa("Josu", "Perez", "Galdos", "Josueeee", AAAAAAAA, TELEFONO, "Josueeee@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b5 = new Bezeroa("Saioa", "Goikoetxea", "Ugarte", "Saioo99", "b", TELEFONO, "Saioo99@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b6 = new Bezeroa("Mikel", "Artola", "Peraz", "Gamer75", AAAAAAAA, TELEFONO, "Gamer75@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b7 = new Bezeroa("Pello", "Garcia", "Lorca", "PelloJoxepe", AAAAAAAA, TELEFONO, "PelloJoxepe@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b8 = new Bezeroa("Karmele", "Loidi", "Gorostidi", "Katuu19", AAAAAAAA, TELEFONO, "Katuu19@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b9 = new Bezeroa("Eneko", "Sagastume", "Ontsalo", "Ontsalo", AAAAAAAA, TELEFONO, "Ontsalo@gmail.com",LocalDate.of(2001,8,9));
+			Bezeroa b10 = new Bezeroa("Naiara", "Agirre", "Urriza", "Na1ara", AAAAAAAA, TELEFONO, "Na1ara@gmail.com",LocalDate.of(2001,8,9));
 			
 			
 			Event event1 = new Event(21,"Eibar-Celta", UtilDate.newDate(2021, 2, 17));
@@ -163,36 +166,36 @@ public class DataAccess {
 			Question ques4 = event2.addQuestion("Golik sartuko al da lehen zatian?", 1);
 			
 			Pronostikoa pronos1, pronos2, pronos3, pronos4, pronos5, pronos6, pronos7, pronos8, pronos9, pronos10, pronos11, pronos12, pronos13, pronos14, pronos15, pronos16, pronos17;
-			pronos1 = ques1.addPronostic("1", (double)1.2);
-			pronos2 = ques1.addPronostic("X", (double)1.5);//
-			pronos3 = ques1.addPronostic("2", (double)1.8);
-			pronos4 = ques2.addPronostic("1", (double)1.2);//
-			pronos5 = ques2.addPronostic("2", (double)1.6);
-			pronos6 = ques2.addPronostic("Golik ez", (double)1.8);
-			pronos7 = ques3.addPronostic("1", (double)2.2);//
-			pronos8 = ques3.addPronostic("X", (double)1.4);
-			pronos9 = ques3.addPronostic("2", (double)1.2);
-			pronos10 = ques4.addPronostic("Bai", (double)1.3);
-			pronos11 = ques4.addPronostic("Ez", (double)2.5);//
+			pronos1 = ques1.addPronostic("1", 1.2);
+			pronos2 = ques1.addPronostic("X", 1.5);//
+			pronos3 = ques1.addPronostic("2", 1.8);
+			pronos4 = ques2.addPronostic("1", 1.2);//
+			pronos5 = ques2.addPronostic("2", 1.6);
+			pronos6 = ques2.addPronostic("Golik ez", 1.8);
+			pronos7 = ques3.addPronostic("1", 2.2);//
+			pronos8 = ques3.addPronostic("X", 1.4);
+			pronos9 = ques3.addPronostic("2", 1.2);
+			pronos10 = ques4.addPronostic("Bai", 1.3);
+			pronos11 = ques4.addPronostic("Ez", 2.5);//
 		
-			pronos12 = q1.addPronostic("1", (double)1.2);
-			pronos13 = q1.addPronostic("X", (double)1.5);//
-			pronos14 = q1.addPronostic("2", (double)1.8);
-			pronos15 = q2.addPronostic("1", (double)1.2);//
-			pronos16 = q2.addPronostic("2", (double)1.6);
-			pronos17 = q2.addPronostic("Golik ez", (double)1.8);
-			pronos12 = q3.addPronostic("1", (double)1.2);
-			pronos13 = q3.addPronostic("X", (double)1.5);//
-			pronos14 = q3.addPronostic("2", (double)1.8);
-			pronos15 = q4.addPronostic("<2", (double)1.2);//
-			pronos16 = q4.addPronostic("3", (double)1.6);
-			pronos17 = q4.addPronostic(">3", (double)1.8);
+			pronos12 = q1.addPronostic("1", 1.2);
+			pronos13 = q1.addPronostic("X", 1.5);//
+			pronos14 = q1.addPronostic("2", 1.8);
+			pronos15 = q2.addPronostic("1", 1.2);//
+			pronos16 = q2.addPronostic("2", 1.6);
+			pronos17 = q2.addPronostic("Golik ez", 1.8);
+			pronos12 = q3.addPronostic("1", 1.2);
+			pronos13 = q3.addPronostic("X", 1.5);//
+			pronos14 = q3.addPronostic("2", 1.8);
+			pronos15 = q4.addPronostic("<2", 1.2);//
+			pronos16 = q4.addPronostic("3", 1.6);
+			pronos17 = q4.addPronostic(">3", 1.8);
 			
 			
 			Errepikapena errepikapenBerria = b2.addErrepikatzailea(b5, 2, 10, 0.2);
 			b5.addErrepikatua(errepikapenBerria);
 			
-			ArrayList<Pronostikoa> p = new ArrayList<Pronostikoa>();
+			ArrayList<Pronostikoa> p = new ArrayList<>();
 			p.add(pronos2);
 			p.add(pronos4);
 			Apustua apustua1 = b2.addApustua(p, 2, null);
@@ -414,7 +417,7 @@ public class DataAccess {
 		}
 	}
 	
-	public Pertsona register(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String emaila, Date jaiotzeData, String mota) throws UserAlreadyExist{
+	public Pertsona register(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String emaila, LocalDate jaiotzeData, String mota) throws UserAlreadyExist{
 		TypedQuery<Pertsona> query = db.createQuery("SELECT p FROM Pertsona p WHERE p.erabiltzaileIzena=?1", Pertsona.class);
 		query.setParameter(1, erabiltzaileIzena);
 		List<Pertsona> pertsona = query.getResultList();

@@ -1,7 +1,8 @@
 package test;
 
 import static org.junit.Assert.*;
-import java.util.Date;
+
+import java.time.LocalDate;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,8 +17,7 @@ import domain.Langilea;
 import exceptions.UserAlreadyExist;
 
 public class RegisterTest {
-	@SuppressWarnings("deprecation")
-	private static final Date JAIOTZE_DATA = new Date(1999,02,02);
+	private static final LocalDate JAIOTZE_DATA = LocalDate.of(1999,02,02);
 	private static final String ADMIN = "admin";
 	private static final String CORREOA = "jon@ikasle.com";
 	private static final String TELEFONOA = "666699999";
@@ -98,8 +98,8 @@ public class RegisterTest {
 	@DisplayName("Test 5: Prueba ")
 	public void test5() {
 		try {
-			Mockito.doReturn(false).when(dataAccessMock).register("1","1","1","1","1","1","1",new Date (1),"1");
-			sut.register("1","1","1","1","1","1","1",new Date (1),"1");
+			Mockito.doReturn(false).when(dataAccessMock).register("1","1","1","1","1","1","1",JAIOTZE_DATA,"1");
+			sut.register("1","1","1","1","1","1","1",JAIOTZE_DATA,"1");
 		} catch (UserAlreadyExist e) {
 			e.printStackTrace();
 		}	

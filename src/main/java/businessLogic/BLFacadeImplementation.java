@@ -1,5 +1,6 @@
 package businessLogic;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
@@ -146,7 +147,7 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     
     @WebMethod
-	public Pertsona register(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, Date jaiotzeData, String mota) throws UserAlreadyExist{
+	public Pertsona register(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, LocalDate jaiotzeData, String mota) throws UserAlreadyExist{
     	dbManager.open(false);
 		Pertsona emaitza = dbManager.register(izena, abizena1, abizena2, erabiltzaileIzena, pasahitza, telefonoZbkia, email, jaiotzeData, mota);
 		dbManager.close();

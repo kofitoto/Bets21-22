@@ -1,6 +1,7 @@
 package businessLogic;
 
 import java.util.Vector;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -91,7 +92,7 @@ public interface BLFacade  {
 	 * @return
 	 * @throws UserAlreadyExist
 	 */
-	@WebMethod public Pertsona register(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoa, String emaila, Date jaiotzeData, String mota) throws UserAlreadyExist;
+	@WebMethod public Pertsona register(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoa, String emaila, LocalDate jaiotzeData, String mota) throws UserAlreadyExist;
 	
 	/**
 	 * Metodo honek description eta eventDate dituen gertaerarik ez badago datu basean, sortu eta gehitu egiten du

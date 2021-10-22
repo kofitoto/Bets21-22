@@ -1,7 +1,7 @@
 package domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Vector;
 
 import javax.persistence.CascadeType;
@@ -27,7 +27,7 @@ public class Langilea extends Pertsona implements Serializable{
 		super();
 	}
 
-	public Langilea(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, Date jaiotzeData) {
+	public Langilea(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, LocalDate jaiotzeData) {
 		super(izena, abizena1, abizena2, erabiltzaileIzena, pasahitza, telefonoZbkia, email, jaiotzeData);
 	}
 	

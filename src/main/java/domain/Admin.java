@@ -1,8 +1,7 @@
 package domain;
 
 import java.io.Serializable;
-import java.util.Date;
-
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -20,7 +19,7 @@ public class Admin extends Pertsona implements Serializable{
 		super();
 	}
 
-	public Admin(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, Date date) {
-		super(izena, abizena1, abizena2, erabiltzaileIzena, pasahitza, telefonoZbkia, email, date);
+	public Admin(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, LocalDate jaiotzeData) {
+		super(izena, abizena1, abizena2, erabiltzaileIzena, pasahitza, telefonoZbkia, email, jaiotzeData);
 	}
 }

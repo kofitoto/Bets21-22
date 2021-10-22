@@ -1,8 +1,7 @@
 package domain;
 
 import java.io.Serializable;
-import java.util.Date;
-
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -27,13 +26,13 @@ public abstract class Pertsona implements Serializable{
 	public String pasahitza;
 	public String telefonoZbkia;
 	public String email;
-	public Date jaiotzeData;
+	public LocalDate jaiotzeData;
 	
 	public Pertsona(){
 		super();
 	}
 	
-	public Pertsona (String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, Date date) {
+	public Pertsona (String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, LocalDate jaiotzeData2) {
 		this.izena = izena;
 		this.abizena1 = abizena1;
 		this.abizena2 = abizena2;
@@ -41,7 +40,7 @@ public abstract class Pertsona implements Serializable{
 		this.pasahitza = pasahitza;
 		this.telefonoZbkia = telefonoZbkia;
 		this.email=email;
-		this.jaiotzeData=date;
+		this.jaiotzeData=jaiotzeData2;
 	}
 	
 	public String getErabiltzaileIzena() {
@@ -96,11 +95,11 @@ public abstract class Pertsona implements Serializable{
 		this.email = email;
 	}
 
-	public Date getJaiotzeData() {
+	public LocalDate getJaiotzeData() {
 		return jaiotzeData;
 	}
 
-	public void setJaiotzeData(Date jaiotzeData) {
+	public void setJaiotzeData(LocalDate jaiotzeData) {
 		this.jaiotzeData = jaiotzeData;
 	}
 

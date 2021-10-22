@@ -1,6 +1,7 @@
 package domain;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Vector;
@@ -64,7 +65,7 @@ public class Bezeroa extends Pertsona implements Serializable{
 		this.mugimenduak = mugimenduak;
 	}
 
-	public Bezeroa(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, Date jaiotzeData) {
+	public Bezeroa(String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, LocalDate jaiotzeData) {
 		super(izena, abizena1, abizena2, erabiltzaileIzena, pasahitza, telefonoZbkia, email, jaiotzeData);
 		this.dirua=0;
 		jokatuak=0;
