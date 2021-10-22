@@ -36,7 +36,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelError = new JLabel();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
+	private ArrayList<Date> datesWithEventsCurrentMonth = new ArrayList<Date>();
 	
 	private JComboBox<Question> jComboBoxQuestions;
 	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<Question>();
@@ -112,7 +112,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 		
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
-		datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+		datesWithEventsCurrentMonth=(ArrayList<Date>) facade.getEventsMonth(jCalendar.getDate());
 		paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
 
 		jLabelEventDate.setBounds(new Rectangle(40, 15, 140, 25));
@@ -123,7 +123,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 		jLabelListOfQuestions.setBounds(290, 109, 277, 14);
 		getContentPane().add(jLabelListOfQuestions);
 		
-		jComboBoxQuestions = new JComboBox<Question>();
+		jComboBoxQuestions = new JComboBox<>();
 		jComboBoxQuestions.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				jLabelError.setText("");
@@ -193,7 +193,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 				jLabelSucces.setText("");
 				
 				selectedPronostic = ((domain.Pronostikoa) jComboBoxPronostics.getSelectedItem());
-				if(selectedPronostic!=null) {
+				if (selectedPronostic!=null) {
 					jButtonCreate.setEnabled(true);
 				}else {
 					jButtonCreate.setEnabled(false);
@@ -241,7 +241,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 						
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+						datesWithEventsCurrentMonth=(ArrayList<Date>) facade.getEventsMonth(jCalendar.getDate());
 					}
 
 
@@ -280,7 +280,7 @@ public class EmaitzaIpiniGUI extends JFrame {
 	}
 
 	
-public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWithEventsCurrentMonth) {
+public static void paintDaysWithEvents(JCalendar jCalendar,ArrayList<Date> datesWithEventsCurrentMonth) {
 		Calendar calendar = jCalendar.getCalendar();
 		
 		int month = calendar.get(Calendar.MONTH);
@@ -298,7 +298,7 @@ public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWit
 	 	for (Date d:datesWithEventsCurrentMonth){
 	 		calendar.setTime(d);
 	 		System.out.println(d);
-			Component o = (Component) jCalendar.getDayChooser().getDayPanel()
+			Component o = jCalendar.getDayChooser().getDayPanel()
 					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);
 			o.setBackground(Color.CYAN);
 	 	}
