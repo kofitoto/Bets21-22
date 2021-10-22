@@ -33,7 +33,7 @@ public abstract class Pertsona implements Serializable{
 		super();
 	}
 	
-	public Pertsona (String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, Date jaiotzeData) {
+	public Pertsona (String izena, String abizena1, String abizena2, String erabiltzaileIzena, String pasahitza, String telefonoZbkia, String email, Date date) {
 		this.izena = izena;
 		this.abizena1 = abizena1;
 		this.abizena2 = abizena2;
@@ -41,7 +41,7 @@ public abstract class Pertsona implements Serializable{
 		this.pasahitza = pasahitza;
 		this.telefonoZbkia = telefonoZbkia;
 		this.email=email;
-		this.jaiotzeData=jaiotzeData;
+		this.jaiotzeData=date;
 	}
 	
 	public String getErabiltzaileIzena() {
