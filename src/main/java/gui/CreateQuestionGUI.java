@@ -44,9 +44,9 @@ public class CreateQuestionGUI extends JFrame {
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 	
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
+	private ArrayList<Date> datesWithEventsCurrentMonth = new ArrayList<>();
 	
-	public CreateQuestionGUI(Vector<domain.Event> v, AdminGUI aurrekoa) {
+	public CreateQuestionGUI(ArrayList<Event> v, AdminGUI aurrekoa) {
 		try {
 			this.aurrekoa=aurrekoa;
 			jbInit(v);
@@ -55,7 +55,7 @@ public class CreateQuestionGUI extends JFrame {
 		}
 	}
 
-	private void jbInit(Vector<domain.Event> v) throws Exception {
+	private void jbInit(ArrayList<Event> v) throws Exception {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
@@ -111,7 +111,7 @@ public class CreateQuestionGUI extends JFrame {
 		
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
-		datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+		datesWithEventsCurrentMonth= (ArrayList<Date>) facade.getEventsMonth(jCalendar.getDate());
 		paintDaysWithEvents(jCalendar,datesWithEventsCurrentMonth);
 		
 		
@@ -147,7 +147,7 @@ public class CreateQuestionGUI extends JFrame {
 						
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						datesWithEventsCurrentMonth=(Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+						datesWithEventsCurrentMonth= (ArrayList<Date>) facade.getEventsMonth(jCalendar.getDate());
 					}
 
 
@@ -191,7 +191,7 @@ public class CreateQuestionGUI extends JFrame {
 	}
 
 	
-public static void paintDaysWithEvents(JCalendar jCalendar,Vector<Date> datesWithEventsCurrentMonth) {
+public static void paintDaysWithEvents(JCalendar jCalendar,ArrayList<Date> datesWithEventsCurrentMonth) {
 		// For each day with events in current month, the background color for that day is changed.
 	
 		Calendar calendar = jCalendar.getCalendar();

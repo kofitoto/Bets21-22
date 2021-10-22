@@ -1,7 +1,6 @@
 package test;
 
 import static org.junit.Assert.*;
-
 import java.time.LocalDate;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
