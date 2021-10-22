@@ -18,6 +18,7 @@ import domain.BezeroartekoMezua;
 import domain.Mezua;
 
 public class PostontziaGUI extends JFrame {
+	private static final String ESKAERA = "eskaera";
 	BezeroaGUI aurrekoa;
 	private Bezeroa bezeroa; 
 	private Vector<Mezua> mezuak;
@@ -170,7 +171,7 @@ public class PostontziaGUI extends JFrame {
 		    	invalid.setText("");
 		    	emaitza.setText("");
 		    	String mota = selectedBezeroartekoMezua.getMota();
-		    	if(mota.equals("eskaera")) {
+		    	if(mota.equals(ESKAERA)) {
 		    		emaitza.setBounds(302, 313, 77, 20);
 			    	emaitza.setVisible(true);
 			    	batetik.setText("/1");
@@ -196,7 +197,7 @@ public class PostontziaGUI extends JFrame {
 		    	invalid.setText("");
 		    	emaitza.setText("");
 		    	String mota = selectedBezeroartekoMezua.getMota();
-		    	if(mota.equals("eskaera")) {
+		    	if(mota.equals(ESKAERA)) {
 		    		emaitza.setBounds(302, 313, 300, 20);
 			    	emaitza.setVisible(true);
 			    	batetik.setText("");
@@ -253,7 +254,7 @@ public class PostontziaGUI extends JFrame {
 					remove.setBounds(332, 353, 89, 23);
 					remove.setVisible(true);
 					remove.setEnabled(true);
-					if(mota.equals("eskaera")) {
+					if(mota.equals(ESKAERA)) {
 						invalid.setText("");
 						if(bai.isSelected()) {
 							double onura=-1;
@@ -597,7 +598,7 @@ public class PostontziaGUI extends JFrame {
 					back.setBounds(19, 385, 89, 23);
 					aldatuTamaina(630, 455);
 					String mota = selectedBezeroartekoMezua.getMota();
-					if(mota.equals("eskaera")) {
+					if(mota.equals(ESKAERA)) {
 						nork.setText(ResourceBundle.getBundle("Etiquetas").getString("Who")+": "+selectedBezeroartekoMezua.getIgorlea());
 						mezua.setText(ResourceBundle.getBundle("Etiquetas").getString("Message")+" "+selectedBezeroartekoMezua.getMezua());
 						baldintzak.setText(ResourceBundle.getBundle("Etiquetas").getString("Conditions"));
@@ -737,7 +738,7 @@ public class PostontziaGUI extends JFrame {
 					row.add(((BezeroartekoMezua)m).getGaia());
 					String mota = ((BezeroartekoMezua)m).getMota();
 					String egoera = "";
-					if(mota.equals("eskaera") || mota.equals("errepikatuak eskaera onartu")) {
+					if(mota.equals(ESKAERA) || mota.equals("errepikatuak eskaera onartu")) {
 						if(m.isIrakurrita()) {
 							egoera=ResourceBundle.getBundle("Etiquetas").getString("Answered");
 						}else {

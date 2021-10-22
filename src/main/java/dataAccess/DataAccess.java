@@ -352,9 +352,9 @@ public class DataAccess {
 	 * @param date of the month for which days with events want to be retrieved
 	 * @return collection of dates
 	 */
-	public Vector<Date> getEventsMonth(Date date) {
+	public ArrayList<Date> getEventsMonth(Date date) {
 		System.out.println(">> DataAccess: getEventsMonth");
-		Vector<Date> res = new Vector<Date>();
+		ArrayList<Date> res = new ArrayList<>();
 
 		Date firstDayMonthDate = UtilDate.firstDayMonth(date);
 		Date lastDayMonthDate = UtilDate.lastDayMonth(date);
@@ -363,7 +363,7 @@ public class DataAccess {
 				"SELECT DISTINCT ev.eventDate FROM Event ev WHERE ev.eventDate BETWEEN ?1 and ?2", Date.class);
 		query.setParameter(1, firstDayMonthDate);
 		query.setParameter(2, lastDayMonthDate);
-		List<Date> dates = query.getResultList();
+		ArrayList<Date> dates = (ArrayList<Date>) query.getResultList();
 		for (Date d : dates) {
 			System.out.println(d.toString());
 			res.add(d);
