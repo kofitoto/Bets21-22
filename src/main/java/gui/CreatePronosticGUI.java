@@ -127,7 +127,7 @@ public class CreatePronosticGUI extends JFrame {
 		this.getContentPane().add(jCalendar, null);
 
 		BLFacade facade = MainGUI.getBusinessLogic();
-		datesWithEventsCurrentMonth = facade.getEventsMonth(jCalendar.getDate());
+		datesWithEventsCurrentMonth = (Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
 		System.out.println(jCalendar.getDate()+ "<------------------");
 		paintDaysWithEvents(jCalendar, datesWithEventsCurrentMonth);
 
@@ -259,7 +259,7 @@ public class CreatePronosticGUI extends JFrame {
 
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						datesWithEventsCurrentMonth = facade.getEventsMonth(jCalendar.getDate());
+						datesWithEventsCurrentMonth = (Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
 					}
 
 					paintDaysWithEvents(jCalendar, datesWithEventsCurrentMonth);
