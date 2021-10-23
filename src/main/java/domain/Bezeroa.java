@@ -3,9 +3,6 @@ package domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Vector;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,28 +26,28 @@ public class Bezeroa extends Pertsona implements Serializable{
 	private double komisioAutomatikoa;
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<Mugimendua> mugimenduak=new Vector<Mugimendua>();
+	private ArrayList<Mugimendua> mugimenduak=new ArrayList<>();
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<Apustua> apustuak=new Vector<Apustua>();
-	
-	@XmlIDREF
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<BezeroartekoMezua> bidalitakoBezeroMezuak=new Vector<BezeroartekoMezua>();
+	private ArrayList<Apustua> apustuak=new ArrayList<Apustua>();
 	
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<BezeroartekoMezua> jasotakoBezeroMezuak=new Vector<BezeroartekoMezua>();
-	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<Errepikapena> errepikatzaileak=new Vector<Errepikapena>();
-	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<Errepikapena> errepikatuak=new Vector<Errepikapena>();
+	private ArrayList<BezeroartekoMezua> bidalitakoBezeroMezuak=new ArrayList<BezeroartekoMezua>();
 	
 	@XmlIDREF
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
-	private Vector<ArretaElkarrizketa> arretaElkarrizketak=new Vector<ArretaElkarrizketa>();
+	private ArrayList<BezeroartekoMezua> jasotakoBezeroMezuak=new ArrayList<BezeroartekoMezua>();
+	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private ArrayList<Errepikapena> errepikatzaileak=new ArrayList<Errepikapena>();
+	
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private ArrayList<Errepikapena> errepikatuak=new ArrayList<Errepikapena>();
+	
+	@XmlIDREF
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.PERSIST)
+	private ArrayList<ArretaElkarrizketa> arretaElkarrizketak=new ArrayList<ArretaElkarrizketa>();
 	
 	
 	public Bezeroa(){
@@ -61,7 +58,7 @@ public class Bezeroa extends Pertsona implements Serializable{
 		this.dirua = dirua;
 	}
 
-	public void setMugimenduak(Vector<Mugimendua> mugimenduak) {
+	public void setMugimenduak(ArrayList<Mugimendua> mugimenduak) {
 		this.mugimenduak = mugimenduak;
 	}
 
@@ -76,16 +73,16 @@ public class Bezeroa extends Pertsona implements Serializable{
 	
 	public Mugimendua addMugimendua(String deskripzioa, double kuota, String mota) {
 		eguneratuDirua(kuota);
-		Mugimendua berria = new Mugimendua(deskripzioa, kuota, this, mota);
+		Mugimendua berria = new Mugimendua(deskripzioa, kuota, mota);
 		mugimenduak.add(berria);
 		return berria;
 	}
 	
-	public Mugimendua addMugimendua(String deskripzioa, double kuota, String mota, Date data) {
+	public Mugimendua addMugimendua(String deskripzioa, double kuota, String mota, LocalDate localDate) {
 		eguneratuDirua(kuota);
-		Mugimendua berria = new Mugimendua(deskripzioa, kuota, this, mota, data);
+		Mugimendua berria = new Mugimendua(deskripzioa, kuota, mota, localDate);
 		mugimenduak.add(berria);
-		if(mota=="irabazi") {
+		if(mota.equals("irabazi")) {
 			irabaziak++;
 		}
 		return berria;
@@ -99,7 +96,7 @@ public class Bezeroa extends Pertsona implements Serializable{
 		return dirua;
 	}
 	
-	public Vector<Mugimendua> getMugimenduak(){
+	public ArrayList<Mugimendua> getMugimenduak(){
 		return mugimenduak;
 	}
 	
@@ -115,7 +112,7 @@ public class Bezeroa extends Pertsona implements Serializable{
 		jokatuak=jokatuak-1;
 	}
 	
-	public Vector<Apustua> getApustuak(){
+	public ArrayList<Apustua> getApustuak(){
 		return apustuak;
 	}
 	
@@ -166,11 +163,11 @@ public class Bezeroa extends Pertsona implements Serializable{
 		return bidalitakoMezua;
 	}
 	
-	public Vector<BezeroartekoMezua> getBidalitakoBezeroMezuak() {
+	public ArrayList<BezeroartekoMezua> getBidalitakoBezeroMezuak() {
 		return bidalitakoBezeroMezuak;
 	}
 
-	public Vector<BezeroartekoMezua> getJasotakoMezuak() {
+	public ArrayList<BezeroartekoMezua> getJasotakoMezuak() {
 		return jasotakoBezeroMezuak;
 	}
 
@@ -247,11 +244,11 @@ public class Bezeroa extends Pertsona implements Serializable{
 		this.errepikatuak.add(e);
 	}
 
-	public Vector<Errepikapena> getErrepikatzaileak() {
+	public ArrayList<Errepikapena> getErrepikatzaileak() {
 		return errepikatzaileak;
 	}
 
-	public Vector<Errepikapena> getErrepikatuak() {
+	public ArrayList<Errepikapena> getErrepikatuak() {
 		return errepikatuak;
 	}
 	
@@ -291,8 +288,8 @@ public class Bezeroa extends Pertsona implements Serializable{
 		return berria;
 	}
 	
-	public Vector<Mezua> getMezuak() {
-		Vector<Mezua> emaitza = new Vector<Mezua>();
+	public ArrayList<Mezua> getMezuak() {
+		ArrayList<Mezua> emaitza = new ArrayList<>();
 		emaitza.addAll(jasotakoBezeroMezuak);
 		for(ArretaElkarrizketa ae : arretaElkarrizketak) {
 			for(ArretaMezua am : ae.getLangileakBidalitakoak()) {
@@ -317,7 +314,7 @@ public class Bezeroa extends Pertsona implements Serializable{
 		return emaitza;
 	}
 
-	public Vector<ArretaElkarrizketa> getArretaElkarrizketak() {
+	public ArrayList<ArretaElkarrizketa> getArretaElkarrizketak() {
 		return arretaElkarrizketak;
 	}
 

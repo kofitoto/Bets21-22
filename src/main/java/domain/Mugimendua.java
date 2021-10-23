@@ -1,8 +1,7 @@
 package domain;
 
 import java.io.Serializable;
-import java.util.Date;
-
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,7 +20,7 @@ public class Mugimendua implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private String deskripzioa;
-	private Date data;
+	private LocalDate data;
 	private double aldaketa;
 	@Id
 	@XmlID
@@ -38,25 +37,23 @@ public class Mugimendua implements Serializable{
 	}
 	
 	public Mugimendua(String deskripzioa, double aldaketa, String mota) {
-		data=new Date();
 		this.deskripzioa = deskripzioa;
 		this.aldaketa = aldaketa;
 		this.mota = mota;
 	}
 	
 	public Mugimendua(String deskripzioa, double aldaketa, Bezeroa bezeroa, String mota) {
-		data=new Date();
 		this.deskripzioa = deskripzioa;
 		this.aldaketa = aldaketa;
 		this.bezeroa = bezeroa;
 		this.mota = mota;
 	}
 	
-	public Date getData() {
+	public LocalDate getData() {
 		return data;
 	}
 
-	public void setData(Date data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 
@@ -80,11 +77,18 @@ public class Mugimendua implements Serializable{
 		this.bezeroa = bezeroa;
 	}
 	
-	public Mugimendua(String deskripzioa, double aldaketa, Bezeroa bezeroa, String mota, Date data) {
-		this.data=data;
+	public Mugimendua(String deskripzioa, double aldaketa, Bezeroa bezeroa, String mota, LocalDate localDate) {
+		this.data=localDate;
 		this.deskripzioa = deskripzioa;
 		this.aldaketa = aldaketa;
 		this.bezeroa = bezeroa;
+		this.mota = mota;
+	}
+	
+	public Mugimendua(String deskripzioa, double aldaketa,  String mota, LocalDate localDate) {
+		this.data=localDate;
+		this.deskripzioa = deskripzioa;
+		this.aldaketa = aldaketa;
 		this.mota = mota;
 	}
 	

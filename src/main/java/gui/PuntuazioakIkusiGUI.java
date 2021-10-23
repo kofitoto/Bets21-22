@@ -3,9 +3,8 @@ package gui;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Vector;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -106,14 +105,14 @@ public class PuntuazioakIkusiGUI extends JFrame {
 		
 	}
 	public void setLangileak() {
-		Vector<Object> row=null;
+		ArrayList<Object> row=null;
 		BLFacade facade=MainGUI.getBusinessLogic();
-		Vector<Langilea> list=facade.getLangileak();
+		ArrayList<Langilea> list=facade.getLangileak();
 		int [] balorazioak;
 		
 		for(Langilea l: list) {
 			if(l.getBalorazioak().length>0) {
-				row=new Vector<Object>();
+				row=new ArrayList<Object>();
 				balorazioak=l.getBalorazioak();
 				row.add(0, l.getIzena());
 				row.add(1, l.getAbizena1());
@@ -125,9 +124,9 @@ public class PuntuazioakIkusiGUI extends JFrame {
 				row.add(7,balorazioak[1]);
 				row.add(8,balorazioak[0]);
 				row.add(9, l.batezBestekoa());
-				tableModelBalorazioak.addRow(row);
+				tableModelBalorazioak.addRow(row.toArray());
 			}else {
-				row=new Vector<Object>();
+				row=new ArrayList<Object>();
 				balorazioak=l.getBalorazioak();
 				row.add(0, l.getIzena());
 				row.add(1, l.getAbizena1());
@@ -139,7 +138,7 @@ public class PuntuazioakIkusiGUI extends JFrame {
 				row.add(7,0);
 				row.add(8,0);
 				row.add(9, 0);
-				tableModelBalorazioak.addRow(row);
+				tableModelBalorazioak.addRow(row.toArray());
 				
 			}
 			

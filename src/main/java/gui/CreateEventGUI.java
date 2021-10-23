@@ -1,17 +1,25 @@
 package gui;
 
 
-import java.util.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ResourceBundle;
 
-import javax.swing.*;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 
 import com.toedter.calendar.JCalendar;
 
-import java.awt.*;
-import java.awt.event.*;
-
 import businessLogic.BLFacade;
-import configuration.UtilDate;
 import domain.Event;
 import exceptions.EventAlreadyExist;
 
@@ -83,10 +91,9 @@ public class CreateEventGUI extends JFrame {
 				String description = jEventDescription.getText();
 				
 				if(description.length()>0) {
-					Date eventDate = jCalendar.getDate();
-					eventDate = UtilDate.trim(eventDate);
-					Date today = new Date();
-					if(eventDate.after(today)) {
+					LocalDate eventDate =  jCalendar.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+					LocalDate today = LocalDate.now();
+					if(eventDate.isAfter(today)) {
 						try {
 							BLFacade facade = MainGUI.getBusinessLogic();
 							facade.createEvent(description,eventDate);

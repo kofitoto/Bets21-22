@@ -1,16 +1,34 @@
 package gui;
 
-import java.util.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Vector;
 
-import javax.swing.*;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import com.toedter.calendar.JCalendar;
-
-import java.awt.*;
-import java.awt.event.*;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 
 import businessLogic.BLFacade;
 import configuration.UtilDate;
@@ -333,13 +351,13 @@ public class ApustuaEginGUI extends JFrame {
 					eventDate = UtilDate.trim(eventDate);
 					Date today = new Date();
 					if(eventDate.after(today)) {
-						Vector<Object> row = new Vector<Object>();
-						row.add(UtilDate.getString(jCalendar.getDate()));
+						ArrayList<Object> row = new ArrayList<>();
+						row.add(jCalendar.getDate().toString());
 						row.add(selectedEvent.getDescription());
 						row.add(selectedQuestion.getQuestion());
 						row.add(selectedPronostic.getDeskripzioa());
 						row.add(selectedPronostic.getKuota());
-						tableModelApustua.addRow(row);
+						tableModelApustua.addRow(row.toArray());
 						if(pronostikoak.isEmpty()) {
 							scrollPaneApustua.setVisible(true);
 							jButtonCreate.setEnabled(true);

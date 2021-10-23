@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.Vector;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -86,28 +85,28 @@ public class DataAccess {
 				year += 1;
 			}
 
-			Event ev1 = new Event(1,"Atlético-Athletic", UtilDate.newDate(year, month, 17));
-			Event ev2 = new Event(2, "Eibar-Barcelona", UtilDate.newDate(year, month, 17));
-			Event ev3 = new Event(3, "Getafe-Celta", UtilDate.newDate(year, month, 17));
-			Event ev4 = new Event(4, "Alavés-Deportivo", UtilDate.newDate(year, month, 17));
-			Event ev5 = new Event(5, "Español-Villareal", UtilDate.newDate(year, month, 17));
-			Event ev6 = new Event(6, "Las Palmas-Sevilla", UtilDate.newDate(year, month, 17));
-			Event ev7 = new Event(7, "Malaga-Valencia", UtilDate.newDate(year, month, 17));
-			Event ev8 = new Event(8, "Girona-Leganés", UtilDate.newDate(year, month, 17));
-			Event ev9 = new Event(9, "Real Sociedad-Levante", UtilDate.newDate(year, month, 17));
-			Event ev10 = new Event(10, "Betis-Real Madrid", UtilDate.newDate(year, month, 17));
+			Event ev1 = new Event(1,"Atlético-Athletic", LocalDate.of(year, month, 17));
+			Event ev2 = new Event(2, "Eibar-Barcelona", LocalDate.of(year, month, 17));
+			Event ev3 = new Event(3, "Getafe-Celta", LocalDate.of(year, month, 17));
+			Event ev4 = new Event(4, "Alavés-Deportivo", LocalDate.of(year, month, 17));
+			Event ev5 = new Event(5, "Español-Villareal", LocalDate.of(year, month, 17));
+			Event ev6 = new Event(6, "Las Palmas-Sevilla", LocalDate.of(year, month, 17));
+			Event ev7 = new Event(7, "Malaga-Valencia", LocalDate.of(year, month, 17));
+			Event ev8 = new Event(8, "Girona-Leganés", LocalDate.of(year, month, 17));
+			Event ev9 = new Event(9, "Real Sociedad-Levante", LocalDate.of(year, month, 17));
+			Event ev10 = new Event(10, "Betis-Real Madrid", LocalDate.of(year, month, 17));
 
-			Event ev11 = new Event(11, "Atletico-Athletic", UtilDate.newDate(year, month, 1));
-			Event ev12 = new Event(12, "Eibar-Barcelona", UtilDate.newDate(year, month, 1));
-			Event ev13 = new Event(13, "Getafe-Celta", UtilDate.newDate(year, month, 1));
-			Event ev14 = new Event(14, "Alavés-Deportivo", UtilDate.newDate(year, month, 1));
-			Event ev15 = new Event(15, "Español-Villareal", UtilDate.newDate(year, month, 1));
-			Event ev16 = new Event(16, "Las Palmas-Sevilla", UtilDate.newDate(year, month, 1));
+			Event ev11 = new Event(11, "Atletico-Athletic", LocalDate.of(year, month, 1));
+			Event ev12 = new Event(12, "Eibar-Barcelona", LocalDate.of(year, month, 1));
+			Event ev13 = new Event(13, "Getafe-Celta", LocalDate.of(year, month, 1));
+			Event ev14 = new Event(14, "Alavés-Deportivo", LocalDate.of(year, month, 1));
+			Event ev15 = new Event(15, "Español-Villareal", LocalDate.of(year, month, 1));
+			Event ev16 = new Event(16, "Las Palmas-Sevilla", LocalDate.of(year, month, 1));
 
-			Event ev17 = new Event(17, "Málaga-Valencia", UtilDate.newDate(year, month + 1, 28));
-			Event ev18 = new Event(18, "Girona-Leganés", UtilDate.newDate(year, month + 1, 28));
-			Event ev19 = new Event(19, "Real Sociedad-Levante", UtilDate.newDate(year, month + 1, 28));
-			Event ev20 = new Event(20, "Betis-Real Madrid", UtilDate.newDate(year, month + 1, 28));
+			Event ev17 = new Event(17, "Málaga-Valencia", LocalDate.of(year, month + 1, 28));
+			Event ev18 = new Event(18, "Girona-Leganés", LocalDate.of(year, month + 1, 28));
+			Event ev19 = new Event(19, "Real Sociedad-Levante", LocalDate.of(year, month + 1, 28));
+			Event ev20 = new Event(20, "Betis-Real Madrid", LocalDate.of(year, month + 1, 28));
 
 			Question q1;
 			Question q2;
@@ -157,8 +156,8 @@ public class DataAccess {
 			Bezeroa b10 = new Bezeroa("Naiara", "Agirre", "Urriza", "Na1ara", AAAAAAAA, TELEFONO, "Na1ara@gmail.com",LocalDate.of(2001,8,9));
 			
 			
-			Event event1 = new Event(21,"Eibar-Celta", UtilDate.newDate(2021, 2, 17));
-			Event event2 = new Event(22,"Granada-Athletic", UtilDate.newDate(2021, 2, 17));
+			Event event1 = new Event(21,"Eibar-Celta", LocalDate.of(2021, 2, 17));
+			Event event2 = new Event(22,"Granada-Athletic", LocalDate.of(2021, 2, 17));
 			
 			Question ques1 = event1.addQuestion("Zeinek irabaziko du partidua?", 1);
 			Question ques2 = event1.addQuestion("Zeinek sartuko du lehenengo gola?", 1);
@@ -210,10 +209,10 @@ public class DataAccess {
 			db.persist(apustu2);
 			
 			Mugimendua m1,m2,m3,m4;
-			m1 = b2.addMugimendua("Bankuko diru-sarrera", 52, "bankua", UtilDate.newDate(2021, 2, 15));
-			m2 = b2.addMugimendua("Apustua egin", -2, "jokatu", UtilDate.newDate(2021, 2, 16));
-			m3 = b2.addMugimendua("Bankuko diru-sarrera", 30, "bankua", UtilDate.newDate(2021, 2, 15));
-			m4 = b5.addMugimendua("Apustu errepikatua egin ("+b2+")", -4, "jokatu", UtilDate.newDate(2021, 2, 16));
+			m1 = b2.addMugimendua("Bankuko diru-sarrera", 52, "bankua", LocalDate.of(2021, 2, 15));
+			m2 = b2.addMugimendua("Apustua egin", -2, "jokatu", LocalDate.of(2021, 2, 16));
+			m3 = b2.addMugimendua("Bankuko diru-sarrera", 30, "bankua", LocalDate.of(2021, 2, 15));
+			m4 = b5.addMugimendua("Apustu errepikatua egin ("+b2+")", -4, "jokatu", LocalDate.of(2021, 2, 16));
 			
 			db.persist(event1);
 			db.persist(event2);
@@ -439,7 +438,7 @@ public class DataAccess {
 		}
 	}
 	
-	public void createEvent(String description, Date eventDate) throws EventAlreadyExist{
+	public void createEvent(String description, LocalDate eventDate) throws EventAlreadyExist{
 		TypedQuery<Event> query = db.createQuery("SELECT e FROM Event e WHERE e.description=?1 AND e.eventDate=?2", Event.class);
 		query.setParameter(1, description);
 		query.setParameter(2, eventDate);
@@ -460,9 +459,9 @@ public class DataAccess {
 		System.out.println("DataBase closed");
 	}
 	
-	public Vector<Question> getQuestions(Event event) {
+	public ArrayList<Question> getQuestions(Event event) {
 		System.out.println(">> DataAccess: getQuestions");
-		Vector<Question> res = new Vector<Question>();
+		ArrayList<Question> res = new ArrayList<Question>();
 		TypedQuery<Question> query = db.createQuery("SELECT q FROM Question q WHERE q.event=?1", Question.class);
 		query.setParameter(1, event);
 		List<Question> events = query.getResultList();
@@ -493,7 +492,7 @@ public class DataAccess {
 		Question q = db.find(Question.class, question.getQuestionNumber());
 		db.getTransaction().begin();
 		q.setResult(pronostikoa.getDeskripzioa());
-		Vector<Apustua> apustuak = p.getApustuak();
+		ArrayList<Apustua> apustuak = p.getApustuak();
 		Bezeroa bezeroa;
 		double irabazia;
 		boolean irabazi;
@@ -531,7 +530,7 @@ public class DataAccess {
 			p.addApustua(apus);
 		}
 		db.persist(apus);
-		Vector<Errepikapena> jarraitzaile=erabiltzaile.getErrepikatzaileak();
+		ArrayList<Errepikapena> jarraitzaile=erabiltzaile.getErrepikatzaileak();
 		for(Errepikapena er: jarraitzaile) {
 			double apustudiru=0;
 			if (er.getHilabeteHonetanGeratzenDena()>0) {
@@ -560,10 +559,10 @@ public class DataAccess {
 		db.getTransaction().begin();
 		Apustua a=db.find(Apustua.class, apustua.getIdentifikadorea());
 		ArrayList<Pronostikoa> pronostikoak = a.getPronostikoak();
-		Date today = new Date();
+		LocalDate today = LocalDate.now();
 		for(Pronostikoa p : pronostikoak) {
-			Date eventDate = p.getQuestion().getEvent().getEventDate();
-			if(!eventDate.after(today)) {
+			LocalDate eventDate = p.getQuestion().getEvent().getEventDate();
+			if(!eventDate.isAfter(today)) {
 				throw new EventFinished();
 			}
 		}
@@ -577,7 +576,7 @@ public class DataAccess {
 		for(Pronostikoa p : pronostikoak) {
 			p.removeApustua(a);
 		}
-		Vector<Errepikapena> errepikatzaileak= bezeroa.getErrepikatzaileak();
+		ArrayList<Errepikapena> errepikatzaileak= bezeroa.getErrepikatzaileak();
 		for(Errepikapena er : errepikatzaileak) {
 			Bezeroa bez = er.getNork();
 			Apustua apusErr = bez.baduApustua(a);
@@ -657,9 +656,9 @@ public class DataAccess {
 		return erabiltzaile;
 	}
 	
-	public Vector<Bezeroa> getBezeroak(String username, Bezeroa bezeroa){
+	public ArrayList<Bezeroa> getBezeroak(String username, Bezeroa bezeroa){
 		Bezeroa erabiltzaile = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
-		Vector<Bezeroa> res = new Vector<Bezeroa>();
+		ArrayList<Bezeroa> res = new ArrayList<Bezeroa>();
 		TypedQuery<Bezeroa> query = db.createQuery("SELECT b FROM Bezeroa b", Bezeroa.class);
 		List<Bezeroa> bezeroak = query.getResultList();
 		for (Bezeroa b : bezeroak) {
@@ -691,7 +690,7 @@ public class DataAccess {
 		db.getTransaction().commit();
 	}
 	
-	public Vector<Mezua> getMezuak(Bezeroa bezeroa){
+	public ArrayList<Mezua> getMezuak(Bezeroa bezeroa){
 		Bezeroa erabiltzailea = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
 		return erabiltzailea.getMezuak();
 	}
@@ -738,10 +737,10 @@ public class DataAccess {
 		return erabiltzailea;
 	}
 	
-	public Vector<PronostikoaContainer> getPronostikoak(Apustua a){
+	public ArrayList<PronostikoaContainer> getPronostikoak(Apustua a){
 		Apustua ap = db.find(Apustua.class, a.getIdentifikadorea());
 		ArrayList<Pronostikoa> pronostikoak = ap.getPronostikoak();
-		Vector<PronostikoaContainer> emaitza = new Vector<PronostikoaContainer>();
+		ArrayList<PronostikoaContainer> emaitza = new ArrayList<>();
 		for(Pronostikoa p : pronostikoak) {
 			emaitza.add(new PronostikoaContainer(p));
 		}
@@ -831,8 +830,8 @@ public class DataAccess {
 		db.getTransaction().commit();
 	}
 	
-	public Vector<Langilea> getLangileak() {
-		Vector<Langilea> langileak = new Vector<Langilea>();
+	public ArrayList<Langilea> getLangileak() {
+		ArrayList<Langilea> langileak = new ArrayList<>();
 		TypedQuery<Langilea> query = db.createQuery("SELECT l FROM Langilea l", Langilea.class);
 		List<Langilea> list = query.getResultList();
 		for (Langilea l : list) {
@@ -842,9 +841,9 @@ public class DataAccess {
 	}
 	
 	public ArrayList<ErrepikatuakContainer> getErrepikatzaileak(Bezeroa bezeroa) {
-		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<ErrepikatuakContainer>();
+		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<>();
 		Bezeroa erabiltzailea = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
-		Vector<Errepikapena> mezuak = erabiltzailea.getErrepikatzaileak();
+		ArrayList<Errepikapena> mezuak = erabiltzailea.getErrepikatzaileak();
 		ErrepikatuakContainer x;
 
 		for (Errepikapena m : mezuak) {
@@ -855,9 +854,9 @@ public class DataAccess {
 	}
 
 	public ArrayList<ErrepikatuakContainer> getErrepikapenak(Bezeroa bezeroa) {
-		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<ErrepikatuakContainer>();
+		ArrayList<ErrepikatuakContainer> emaitza = new ArrayList<>();
 		Bezeroa erabiltzailea = db.find(Bezeroa.class, bezeroa.getErabiltzaileIzena());
-		Vector<Errepikapena> mezuak = erabiltzailea.getErrepikatuak();
+		ArrayList<Errepikapena> mezuak = erabiltzailea.getErrepikatuak();
 		ErrepikatuakContainer x;
 
 		for (Errepikapena m : mezuak) {

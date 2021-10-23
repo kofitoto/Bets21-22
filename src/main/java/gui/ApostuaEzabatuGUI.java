@@ -18,16 +18,16 @@ import exceptions.EventFinished;
 public class ApostuaEzabatuGUI extends JFrame {
 	BezeroaGUI aurrekoa;
 	private Bezeroa bezeroa; 
-	private Vector<Apustua> apustuak;
+	private ArrayList<Apustua> apustuak;
 	
 	private static final long serialVersionUID = 1L;
 
 	private JLabel jlabelMsg;
 	private JComboBox<Apustua> comboBox;
-	private DefaultComboBoxModel<Apustua> apustuakModel = new DefaultComboBoxModel<Apustua>();
+	private DefaultComboBoxModel<Apustua> apustuakModel = new DefaultComboBoxModel<>();
 	
 	private Apustua selectedApustua;
-	private Vector<PronostikoaContainer> selectedPronostikoak = new Vector<PronostikoaContainer>();
+	private ArrayList<PronostikoaContainer> selectedPronostikoak = new ArrayList<PronostikoaContainer>();
 	private JButton removeButton;
 	private JScrollPane scrollPaneApustua = new JScrollPane();
 	private JTable tableApustua = new JTable();

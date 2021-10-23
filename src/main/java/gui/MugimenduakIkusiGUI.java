@@ -4,23 +4,21 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Vector;
-
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
 import domain.Bezeroa;
 import domain.Mugimendua;
-
-import javax.swing.JLabel;
-import javax.swing.JScrollPane;
-import javax.swing.JList;
 
 public class MugimenduakIkusiGUI extends JFrame {
 	
@@ -74,7 +72,7 @@ public class MugimenduakIkusiGUI extends JFrame {
 		
 		DefaultListModel<String> lista = new DefaultListModel<String>();
 		
-		Vector<Mugimendua> bezeroMugimenduak = bezeroa.getMugimenduak(); 
+		ArrayList<Mugimendua> bezeroMugimenduak = bezeroa.getMugimenduak(); 
 		if (bezeroMugimenduak.isEmpty()) {
 			lista.addElement(ResourceBundle.getBundle("Etiquetas").getString("NoMoves"));
 		}else {

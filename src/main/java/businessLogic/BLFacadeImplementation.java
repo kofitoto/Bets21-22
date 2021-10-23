@@ -4,14 +4,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.Vector;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
-import domain.Question;
 import domain.Apustua;
 import domain.ArretaElkarrizketa;
 import domain.Bezeroa;
@@ -24,6 +22,7 @@ import domain.Mezua;
 import domain.Pertsona;
 import domain.Pronostikoa;
 import domain.PronostikoaContainer;
+import domain.Question;
 import exceptions.EventAlreadyExist;
 import exceptions.EventFinished;
 import exceptions.PronosticAlreadyExist;
@@ -80,7 +79,7 @@ public class BLFacadeImplementation  implements BLFacade {
 		Question qry=null;
 		
 	    
-		if(new Date().compareTo(event.getEventDate())>0)
+		if(LocalDate.now().compareTo(event.getEventDate())>0)
 			throw new EventFinished(ResourceBundle.getBundle("Etiquetas").getString("ErrorEventHasFinished"));
 				
 		
@@ -155,16 +154,16 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     
     @WebMethod
-    public void createEvent(String description, Date eventDate) throws EventAlreadyExist{
+    public void createEvent(String description, LocalDate eventDate) throws EventAlreadyExist{
     	dbManager.open(false);
 		dbManager.createEvent(description, eventDate);
 		dbManager.close();
     }
     
     @WebMethod	
-	public Vector<Question> getQuestions(Event event)  {
+	public ArrayList<Question> getQuestions(Event event)  {
 		dbManager.open(false);
-		Vector<Question>  questions=dbManager.getQuestions(event);
+		ArrayList<Question>  questions=dbManager.getQuestions(event);
 		dbManager.close();
 		return questions;
 	}
@@ -233,9 +232,9 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     
     @WebMethod 
-    public Vector<Bezeroa> getBezeroak(String username, Bezeroa bezeroa){
+    public ArrayList<Bezeroa> getBezeroak(String username, Bezeroa bezeroa){
     	dbManager.open(false);
-    	Vector<Bezeroa> bezeroak = dbManager.getBezeroak(username, bezeroa);
+    	ArrayList<Bezeroa> bezeroak = dbManager.getBezeroak(username, bezeroa);
     	dbManager.close();
     	return bezeroak;
     }
@@ -249,9 +248,9 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     
     @WebMethod 
-    public Vector<Mezua> getMezuak(Bezeroa bezeroa){
+    public ArrayList<Mezua> getMezuak(Bezeroa bezeroa){
     	dbManager.open(false);
-    	Vector<Mezua> mezuak = dbManager.getMezuak(bezeroa);
+    	ArrayList<Mezua> mezuak = dbManager.getMezuak(bezeroa);
     	dbManager.close();
     	return mezuak;
     }
@@ -287,9 +286,9 @@ public class BLFacadeImplementation  implements BLFacade {
     }
 
 	@WebMethod 
-	public Vector<PronostikoaContainer> getPronostikoak(Apustua a){
+	public ArrayList<PronostikoaContainer> getPronostikoak(Apustua a){
 		dbManager.open(false);
-    	Vector<PronostikoaContainer> emaitza = dbManager.getPronostikoak(a);
+    	ArrayList<PronostikoaContainer> emaitza = dbManager.getPronostikoak(a);
     	dbManager.close();
     	return emaitza;
 	}
@@ -355,9 +354,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	}
 	
 	@WebMethod
-	public Vector<Langilea> getLangileak() {
+	public ArrayList<Langilea> getLangileak() {
 		dbManager.open(false);
-		Vector<Langilea> list = dbManager.getLangileak();
+		ArrayList<Langilea> list = dbManager.getLangileak();
 		dbManager.close();
 		return list;
 	}

@@ -1,6 +1,5 @@
 package businessLogic;
 
-import java.util.Vector;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
@@ -100,9 +99,9 @@ public interface BLFacade  {
 	 * @param eventDate
 	 * @throws EventAlreadyExist
 	 */
-	@WebMethod public void createEvent(String description, Date eventDate) throws EventAlreadyExist;
+	@WebMethod public void createEvent(String description, LocalDate eventDate) throws EventAlreadyExist;
 	
-	@WebMethod public Vector<Question> getQuestions(Event event);
+	@WebMethod public ArrayList<Question> getQuestions(Event event);
 	
 	@WebMethod Pronostikoa createPronostic(Question question, String description, double kuota) throws PronosticAlreadyExist;
 	
@@ -120,11 +119,11 @@ public interface BLFacade  {
 	
 	@WebMethod public Langilea getLangilea(String ErabiltzaileIzena);
 	
-	@WebMethod public Vector<Bezeroa> getBezeroak(String username, Bezeroa bezeroa);
+	@WebMethod public ArrayList<Bezeroa> getBezeroak(String username, Bezeroa bezeroa);
 	
 	@WebMethod public Bezeroa bidaliMezua(Bezeroa nork, Bezeroa nori, String mezua, String gaia, String mota, double zenbatApostatu, double hilabeteanZenbat, double zenbatErrepikatuarentzat);
 
-	@WebMethod public Vector<Mezua> getMezuak(Bezeroa bezeroa);
+	@WebMethod public ArrayList<Mezua> getMezuak(Bezeroa bezeroa);
 	
 	@WebMethod public void mezuaIrakurri(Mezua mezua);
 	
@@ -134,7 +133,7 @@ public interface BLFacade  {
 	
 	@WebMethod public void errepikatu(Bezeroa nork, Bezeroa nori, double apustatukoDena, double hilabetekoMax, double komisioa);
 	
-	@WebMethod public Vector<PronostikoaContainer> getPronostikoak(Apustua a);
+	@WebMethod public ArrayList<PronostikoaContainer> getPronostikoak(Apustua a);
 	
 	@WebMethod public ArretaElkarrizketa arretaMezuaBidali(ArretaElkarrizketa elkarrizketa, String mezua, boolean langileari);
 	
@@ -152,7 +151,7 @@ public interface BLFacade  {
 	
 	@WebMethod public void eguneratuErrepikapenak();
 
-	@WebMethod public Vector<Langilea> getLangileak();
+	@WebMethod public ArrayList<Langilea> getLangileak();
 	
 	@WebMethod public ArrayList<ErrepikatuakContainer> getErrepikatzaileak(Bezeroa bezeroa);
 	 

@@ -1,25 +1,23 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
 import domain.Bezeroa;
-
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.Vector;
-import java.awt.event.ActionEvent;
-import javax.swing.JComboBox;
-import java.awt.Font;
 
 public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 
@@ -114,7 +112,7 @@ public class ErrepikatzekoEskaeraEginGUI extends JFrame {
 				comboBox.setVisible(false);
 				bezeroakModel.removeAllElements();
 				String text = bilatzailea.getText();
-				Vector<Bezeroa> bezeroak = facade.getBezeroak(text, bezeroa);
+				ArrayList<Bezeroa> bezeroak = facade.getBezeroak(text, bezeroa);
 				if(bezeroak.isEmpty()) {
 					erabiltzailerikEz.setText(ResourceBundle.getBundle("Etiquetas").getString("NoUserfound"));
 					comboBox.setVisible(false);

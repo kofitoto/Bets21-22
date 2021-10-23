@@ -21,7 +21,7 @@ public class PostontziaGUI extends JFrame {
 	private static final String ESKAERA = "eskaera";
 	BezeroaGUI aurrekoa;
 	private Bezeroa bezeroa; 
-	private Vector<Mezua> mezuak;
+	private ArrayList<Mezua> mezuak;
 	private int selectedRowInd;
 	
 	private static final long serialVersionUID = 1L;
@@ -71,7 +71,7 @@ public class PostontziaGUI extends JFrame {
 	private JRadioButton bost;
 	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
 	private JLabel rate;
-	private Vector<ArretaElkarrizketa> elkarrizketak = new Vector<ArretaElkarrizketa>();
+	private ArrayList<ArretaElkarrizketa> elkarrizketak = new ArrayList<ArretaElkarrizketa>();
 	
 	public PostontziaGUI(BezeroaGUI aurrekoa, Bezeroa bezeroa) {
 		try {

@@ -1,5 +1,6 @@
 package configuration;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -57,10 +58,10 @@ public class UtilDate {
 
 	}
 	
-	public static String getString(Date date) {
-		int ind1 = date.toString().length();
+	public static String getString(LocalDate localDate) {
+		int ind1 = localDate.toString().length();
 		int ind2 = ind1-4;
-		return date.toString().substring(ind2,ind1)+"/"+date.toString().substring(4,7)+"/"+date.toString().substring(8,10);
+		return localDate.toString().substring(ind2,ind1)+"/"+localDate.toString().substring(4,7)+"/"+localDate.toString().substring(8,10);
 	}
 	
 }

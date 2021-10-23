@@ -1,6 +1,6 @@
 package domain;
 
-import java.util.Vector;
+import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType; 
@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 public class BezeroaContainer {
 	
 	private Bezeroa bezeroa; 
-	private Vector<ArretaElkarrizketa> elkarrizketak; 
+	private ArrayList<ArretaElkarrizketa> elkarrizketak; 
 	
 	public BezeroaContainer(Bezeroa b) {
 		bezeroa=b;
@@ -18,7 +18,7 @@ public class BezeroaContainer {
 	
 	public BezeroaContainer() {
 		bezeroa=null;
-		elkarrizketak=new Vector<ArretaElkarrizketa>();
+		elkarrizketak=new ArrayList<>();
 	}
 
 	public Bezeroa getBezeroa() {
@@ -29,11 +29,11 @@ public class BezeroaContainer {
 		this.bezeroa = bezeroa;
 	}
 
-	public Vector<ArretaElkarrizketa> getElkarrizketak() {
+	public ArrayList<ArretaElkarrizketa> getElkarrizketak() {
 		return elkarrizketak;
 	}
 
-	public void setElkarrizketak(Vector<ArretaElkarrizketa> elkarrizketa) {
+	public void setElkarrizketak(ArrayList<ArretaElkarrizketa> elkarrizketa) {
 		this.elkarrizketak = elkarrizketa;
 	}
 

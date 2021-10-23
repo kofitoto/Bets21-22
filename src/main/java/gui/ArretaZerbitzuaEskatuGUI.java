@@ -1,25 +1,24 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import businessLogic.BLFacade;
 import domain.ArretaElkarrizketa;
 import domain.Bezeroa;
 import domain.BezeroaContainer;
-
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.ResourceBundle;
-import java.util.Vector;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
-import javax.swing.JTextArea;
 
 public class ArretaZerbitzuaEskatuGUI extends JFrame {
 
@@ -36,7 +35,7 @@ public class ArretaZerbitzuaEskatuGUI extends JFrame {
 	private JLabel mezuak;
 	private boolean ziur = false;
 	private JTextArea mezuaArea;
-	private Vector<ArretaElkarrizketa> elkarrizketak = new Vector<ArretaElkarrizketa>();
+	private ArrayList<ArretaElkarrizketa> elkarrizketak = new ArrayList<ArretaElkarrizketa>();
 	
 	
 	/**
