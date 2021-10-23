@@ -97,7 +97,7 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @return collection of events
 	 */
     @WebMethod	
-	public ArrayList<Event> getEvents(Date date)  {
+	public ArrayList<Event> getEvents(LocalDate date)  {
 		dbManager.open(false);
 		ArrayList<Event>  events=dbManager.getEvents(date);
 		dbManager.close();
@@ -111,9 +111,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	 * @param date of the month for which days with events want to be retrieved 
 	 * @return collection of dates
 	 */
-	@WebMethod public ArrayList<Date> getEventsMonth(Date date) {
+	@WebMethod public ArrayList<LocalDate> getEventsMonth(LocalDate date) {
 		dbManager.open(false);
-		ArrayList<Date>  dates=dbManager.getEventsMonth(date);
+		ArrayList<LocalDate>  dates=dbManager.getEventsMonth(date);
 		dbManager.close();
 		return dates;
 	}

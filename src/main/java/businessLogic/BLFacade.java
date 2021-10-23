@@ -51,7 +51,7 @@ public interface BLFacade  {
 	 * @param date in which events are retrieved
 	 * @return collection of events
 	 */
-	@WebMethod public ArrayList<Event> getEvents(Date date);
+	@WebMethod public ArrayList<Event> getEvents(LocalDate date);
 	
 	/**
 	 * This method retrieves from the database the dates a month for which there are events
@@ -59,7 +59,7 @@ public interface BLFacade  {
 	 * @param date of the month for which days with events want to be retrieved 
 	 * @return collection of dates
 	 */
-	@WebMethod public List<Date> getEventsMonth(Date date);
+	@WebMethod public ArrayList<LocalDate> getEventsMonth(LocalDate date);
 	
 	/**
 	 * This method calls the data access to initialize the database with some events and questions.

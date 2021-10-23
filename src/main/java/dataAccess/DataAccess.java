@@ -1,6 +1,7 @@
 package dataAccess;
 
 import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 //hello
 import java.util.Calendar;
@@ -351,19 +352,19 @@ public class DataAccess {
 	 * @param date of the month for which days with events want to be retrieved
 	 * @return collection of dates
 	 */
-	public ArrayList<Date> getEventsMonth(Date date) {
+	public ArrayList<LocalDate> getEventsMonth(LocalDate date) {
 		System.out.println(">> DataAccess: getEventsMonth");
-		ArrayList<Date> res = new ArrayList<>();
+		ArrayList<LocalDate> res = new ArrayList<>();
 
-		Date firstDayMonthDate = UtilDate.firstDayMonth(date);
-		Date lastDayMonthDate = UtilDate.lastDayMonth(date);
+		LocalDate firstDayMonthDate = date.with(TemporalAdjusters.firstDayOfMonth() );
+		LocalDate lastDayMonthDate = date.with(TemporalAdjusters.lastDayOfMonth() );
 
-		TypedQuery<Date> query = db.createQuery(
-				"SELECT DISTINCT ev.eventDate FROM Event ev WHERE ev.eventDate BETWEEN ?1 and ?2", Date.class);
+		TypedQuery<LocalDate> query = db.createQuery(
+				"SELECT DISTINCT ev.eventDate FROM Event ev WHERE ev.eventDate BETWEEN ?1 and ?2", LocalDate.class);
 		query.setParameter(1, firstDayMonthDate);
 		query.setParameter(2, lastDayMonthDate);
-		ArrayList<Date> dates = (ArrayList<Date>) query.getResultList();
-		for (Date d : dates) {
+		ArrayList<LocalDate> dates = (ArrayList<LocalDate>) query.getResultList();
+		for (LocalDate d : dates) {
 			System.out.println(d.toString());
 			res.add(d);
 		}

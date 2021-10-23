@@ -1,7 +1,10 @@
 package gui;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
+import java.util.List;
 
 import javax.swing.*;
 
@@ -40,10 +43,10 @@ public class CreatePronosticGUI extends JFrame {
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
 
-	private Vector<Date> datesWithEventsCurrentMonth = new Vector<Date>();
+	private ArrayList<LocalDate> datesWithEventsCurrentMonth = new ArrayList<>();
 
 	private JComboBox<Question> jComboBoxQuestions;
-	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<Question>();
+	private DefaultComboBoxModel<Question> questionModel = new DefaultComboBoxModel<>();
 
 	private JButton jButtonCreate;
 
@@ -127,7 +130,7 @@ public class CreatePronosticGUI extends JFrame {
 		this.getContentPane().add(jCalendar, null);
 
 		BLFacade facade = MainGUI.getBusinessLogic();
-		datesWithEventsCurrentMonth = (Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+		datesWithEventsCurrentMonth =  (ArrayList<LocalDate>) facade.getEventsMonth(jCalendar.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 		System.out.println(jCalendar.getDate()+ "<------------------");
 		paintDaysWithEvents(jCalendar, datesWithEventsCurrentMonth);
 
@@ -259,14 +262,14 @@ public class CreatePronosticGUI extends JFrame {
 
 						BLFacade facade = MainGUI.getBusinessLogic();
 
-						datesWithEventsCurrentMonth = (Vector<Date>) facade.getEventsMonth(jCalendar.getDate());
+						datesWithEventsCurrentMonth = (ArrayList<LocalDate>) facade.getEventsMonth(jCalendar.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
 					}
 
 					paintDaysWithEvents(jCalendar, datesWithEventsCurrentMonth);
 
 					// Date firstDay = UtilDate.trim(new
 					// Date(jCalendar.getCalendar().getTime().getTime()));
-					Date firstDay = UtilDate.trim(calendarAct.getTime());
+					LocalDate firstDay = calendarAct.getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
 					try {
 						BLFacade facade = MainGUI.getBusinessLogic();
@@ -297,7 +300,7 @@ public class CreatePronosticGUI extends JFrame {
 		});
 	}
 
-	public static void paintDaysWithEvents(JCalendar jCalendar, Vector<Date> datesWithEventsCurrentMonth) {
+	public static void paintDaysWithEvents(JCalendar jCalendar, ArrayList<LocalDate> datesWithEventsCurrentMonth2) {
 		Calendar calendar = jCalendar.getCalendar();
 
 		int month = calendar.get(Calendar.MONTH);
@@ -312,8 +315,8 @@ public class CreatePronosticGUI extends JFrame {
 //		else
 			offset += 5;
 
-		for (Date d : datesWithEventsCurrentMonth) {
-			calendar.setTime(d);
+		for (LocalDate d : datesWithEventsCurrentMonth2) {
+			calendar.setTime(Date.from(d.atStartOfDay(ZoneId.systemDefault()).toInstant()));
 			System.out.println(d);
 			Component o = jCalendar.getDayChooser().getDayPanel()
 					.getComponent(calendar.get(Calendar.DAY_OF_MONTH) + offset);
